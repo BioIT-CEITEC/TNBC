@@ -14,11 +14,10 @@ All steps are modular and reproducible using the provided R scripts. No prior kn
 | Script Name                          | Purpose                                                                 |
 |-------------------------------------|-------------------------------------------------------------------------|
 | `TNBC_separability.R`               | Visualizes sample clustering and separability using t-SNE, UMAP, and LDA |
-| `Feature selection TNBC.R`          | Selects the most informative proteins using multiple feature selection methods |
+| `Feature_selection_TNBC.R`          | Selects the most informative proteins using multiple feature selection methods |
 | `Bayes_interference_tuning.R`       | Optimizes Random Forest hyperparameters using Bayesian optimization     |
 | `Random_forest_TNBC.R`              | Trains and evaluates the final Random Forest classification model       |
-| `Validace_articles.R`               | Validates the model on external log₂ TMT ratio data                     |
-| `Validace_articles_backtransformed.R` | Performs back-transformation and preprocessing of external data for validation |
+| `Validation_articles_backtransformed.R` | Performs back-transformation and preprocessing of external data for validation |
 
 ---
 
