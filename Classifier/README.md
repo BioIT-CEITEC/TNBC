@@ -18,6 +18,7 @@ All steps are modular and reproducible using the provided R scripts. No prior kn
 | `Bayes_interference_tuning.R`       | Optimizes Random Forest hyperparameters using Bayesian optimization     |
 | `Random_forest_TNBC.R`              | Trains and evaluates the final Random Forest classification model       |
 | `Validation_articles_backtransformed.R` | Performs back-transformation and preprocessing of external data for validation |
+| `final_model_TNBC.rds`              | Pre-trained Random Forest model          |
 
 ---
 
