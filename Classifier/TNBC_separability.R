@@ -1,16 +1,21 @@
-### Klasifikátor - separability ? 
+### Separability 
 # Load libraries
 library(dplyr)
 library(data.table)
 
-setwd("~/CEITEC/20241219_Bouchal_TNBC")
+#### IMPUTS ----------
+dir_im<-"TNBC/Classifier"
+data_im <- ("full_clust_tab.tsv")
+
+
+setwd(dir_im)
 wd<-getwd()
 datum<-Sys.Date()
 
 
 # Load data   
 #data <- fread("all_rna_prot_clust_tab.tsv")
-data<-fread("~/CEITEC/20241219_Bouchal_TNBC/Katka_files/results_2025/full_clust_tab.tsv")
+data<-fread(data_im)
 head(data)
 
 cor_gene_tpm <- data[,.(corelation = cor(RNA_log,prot_log)),by = .(gene_id,gene_name)]
@@ -25,7 +30,6 @@ data <- data[gene_id %in% cor_gene_tpm[1:gene_number]$gene_id]
 
 #data<-data %>% dplyr::select(sample,PROT_clust,protein_name:gene_name,prot_raw,prot_log)
 
-# Proteinové fc su absolutne mimo - vypočítať znova !
 
 data[,PROT_fc := prot_log - mean(prot_log), .(gene_id)]
 data <- data[!(sample %in% c("P_010","P_078","P_037","P_079","P_093","P_092"))]
